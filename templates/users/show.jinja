@@ -1,0 +1,24 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+
+<h1>{{user.name}}</h1>
+<h1>{{user.date_joined.strftime('%Y')}}</h1>
+
+<h2>To be visited</h2>
+{% for visit in user.visits %}
+  {% if not visit.visited %}
+    <p>{{visit.city.name}}</p>
+  {% endif %}
+{% endfor %}
+
+<h2>Visited</h2>
+{% for visit in user.visits %}
+  {% if visit.visited %}
+    <p>{{visit.city.name}}</p>
+  {% endif %}
+{% endfor %}
+
+
+
+{% endblock %}

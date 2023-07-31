@@ -1,1 +1,24 @@
-<h1>Visits</h1> 
+{% extends 'base.jinja' %}
+
+{% block content %}
+<h1>Visits</h1>
+
+<p class="button">
+  <a class="button" href="/visits/new">New visit</a>
+</p>
+
+<ul>
+  {% for visit in visits %}
+  <li>
+  <p>{{ visit.user.name }} - {{ visit.city.name }} </p>
+    <p>
+      <form action="/visits/{{ visit.id }}/delete" method="POST">
+        <input class="button" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

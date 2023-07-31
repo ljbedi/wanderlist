@@ -8,8 +8,29 @@
     <link rel="stylesheet" href="static/style.css">
   </head>
   <body>
+
+  <main class="navbar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/cities">Cities</a>
+      </li>
+      <li>
+        <a href="/users">Users</a>
+      </li>
+      <li>
+        <a href="/visits">Visits</a>
+      </li>
+      <li>
+        <a href="/users/1">My Wanderlist</a>
+      </li>
+    </ul>
+  </nav>
+  </main>
   
-  
+  {% block content %}
+    
+  {% endblock  %}
   
   
   </body>

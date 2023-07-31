@@ -1,6 +1,26 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
+<h1>Add City</h1>
+
+<form action="/cities" method="post">
+  <label for="city">City:</label>
+    <input type="text" id="city">
+  
+  <label for="city">Country:</label>
+    <input type="text">
+    </select>
+
+  <input class="button" type='submit' value="Add">
+  
+
+</form>
+
+{% endblock %}
+
+{# {% extends 'base.jinja' %}
+
+{% block content %}
 <h1>Add Visit</h1>
 
 <form action="/visits" method="post">
@@ -18,19 +38,9 @@
       {% endfor %}
     </select>
 
-  <label for="visited">Visited? :</label>
-    
-  <input type="checkbox">
-    {% if  %}
-      
-    {% endif %}
   <input class="button" type='submit' value="Add">
   
 
 </form>
 
-{% endblock %}
-
-{# GET ALL BUTTONS WORKING WITH EACHOTHER 
-ADD ALL BUTTONS TO MY WANDERLIST PAGE SO CAN EDIT FROM WITHIN THERE
-CSS  #}
+{% endblock %} #}

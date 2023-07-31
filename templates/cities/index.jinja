@@ -1,1 +1,24 @@
-<h1>Cities</h1> 
+{% extends 'base.jinja' %}
+
+{% block content %}
+<h1>Cities</h1>
+
+<p class="button">
+  <a class="button" href="/cities/new">New City</a>
+</p>
+
+<ul>
+  {% for city in cities %}
+  <li>
+  <p>{{ city.name }} </p>
+    <p>
+      <form action="/cities/{{ city.id }}/delete" method="POST">
+        <input class="button" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

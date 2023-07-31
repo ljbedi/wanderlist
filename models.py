@@ -20,7 +20,7 @@ class User(db.Model):
     visits = db.relationship('Visit', backref='user')
 
     def __repr__(self):
-        return f"<User: {self.id}: {self.name}>"
+        return f"User: {self.id}: {self.name}"
 
 class Visit(db.Model):
     __tablename__ = "visits"
@@ -31,7 +31,7 @@ class Visit(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
 
     def __repr__(self):
-        return f"<Visit {self.id} : {self.visited}>"
+        return f"Visit {self.id}: {self.visited}"
 
 
 class City(db.Model):
@@ -43,5 +43,5 @@ class City(db.Model):
     visits = db.relationship('Visit', backref ='city')
     
     def __repr__(self):
-        return f"<City {self.id} {self.name}>"
+        return f"City {self.id}: {self.name}"
 

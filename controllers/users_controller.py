@@ -10,3 +10,13 @@ def users():
     users = User.query.all()
     return render_template("users/index.jinja", users=users)
 
+@users_blueprint.route("/users/<id>")
+def show(id):
+    user = User.query.get(id)
+    cities = City.query.join(Visit).filter(Visit.user_id == id)
+    return render_template("users/show.jinja", user=user, cities=cities)
+
+@users_blueprint.route("/users",  methods=['POST'])
+def create_user():
+    return render_template("users/new.jinja")
+
