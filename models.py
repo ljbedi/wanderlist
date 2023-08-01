@@ -1,3 +1,5 @@
+import datetime
+
 from app import db
 
 # Example Model
@@ -16,7 +18,7 @@ class User(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(70))
-    date_joined = db.Column(db.DateTime)
+    date_joined = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     visits = db.relationship('Visit', backref='user')
 
     def __repr__(self):
@@ -27,8 +29,8 @@ class Visit(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     visited = db.Column(db.Boolean, server_default="false")
-    city_id = db.Column(db.Integer, db.ForeignKey("cities.id"))
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    city_id = db.Column(db.Integer, db.ForeignKey("cities.id", ondelete = "CASCADE"))
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete = "CASCADE"))
 
     def __repr__(self):
         return f"Visit {self.id}: {self.visited}"

@@ -10,10 +10,10 @@
 <ul>
   {% for city in cities %}
   <li>
-  <p>{{ city.name }} </p>
+  <p>{{ city.name }} , {{city.country}}</p>
     <p>
       <form action="/cities/{{ city.id }}/delete" method="POST">
-        <input class="button" type="submit" value="delete" />
+        <input class="button" type="submit" value="Delete" />
       </form>
     </p>
   </li>

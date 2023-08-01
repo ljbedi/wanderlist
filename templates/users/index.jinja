@@ -4,7 +4,7 @@
 <h1>Users</h1>
 
 <p class="button">
-  <a class="button" href="/users/<id>/new">New user</a>
+  <a class="button" href="/users/new">New User</a>
 </p>
 
 <ul>
@@ -13,7 +13,7 @@
   <a href = "/users/{{ user.id }}"> {{user.name}}</a>
     <p>
       <form action="/users/{{ user.id }}/delete" method="POST">
-        <input class="button" type="submit" value="delete" />
+        <input class="button" type="submit" value="Delete" />
         
       </form>
     </p>

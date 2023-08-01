@@ -5,9 +5,9 @@
 
 <form action="/visits" method="post">
   <label for="user">Select a user:</label>
-    <select name="user_id" id="user">
+    <select name="user_id" id="user" >
       {% for user in users %}
-      <option value="{{ user.id }}">{{ user.name }}</option>
+      <option {% if user.id == user_id %} selected="selected"{% endif %} value="{{ user.id }}">{{ user.name }}</option>
       {% endfor %}
     </select>
   
@@ -18,13 +18,15 @@
       {% endfor %}
     </select>
 
-  <label for="visited">Visited? :</label>
-    
-  <input type="checkbox">
-    {% if  %}
-      
-    {% endif %}
-  <input class="button" type='submit' value="Add">
+
+  <div>
+        <label for="visited">Visited? :</label>
+        <input  type="checkbox"
+                id="visited"
+                name="visited"
+        />
+        <input class="button" type='submit' value="Add">
+    </div>
   
 
 </form>

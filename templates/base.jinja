@@ -4,29 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wanderlist</title>
-    <link href="static/style.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="static/style.css">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
 
-  <main class="navbar">
+  <header class="header">
   <nav>
-    <ul>
-      <li>
-        <a href="/cities">Cities</a>
-      </li>
-      <li>
-        <a href="/users">Users</a>
-      </li>
-      <li>
-        <a href="/visits">Visits</a>
-      </li>
-      <li>
-        <a href="/users/1">My Wanderlist</a>
-      </li>
-    </ul>
+  <img class = "logo" src = "/static/images/logo.png">
+  <ul class = "nav-items">
+    <li>
+      <a href="/cities">Cities</a>
+    </li>
+    <li>
+      <a href="/users">Users</a>
+    </li>
+    <li>
+      <a href="/visits">Visits</a>
+    </li>
+  </ul>
   </nav>
-  </main>
+  </header>
   
   {% block content %}
     
