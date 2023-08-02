@@ -28,17 +28,21 @@ users_blueprint = Blueprint("users", __name__)
 #     db.session.commit()
 #     return redirect('/users')
 
+# @users_blueprint.route("/users/<id>/delete", methods=['POST'])
+# def delete_user(id):
+#     User.query.filter_by(id = id).delete()
+#     db.session.commit()
+#     return redirect('/users')
+
 @users_blueprint.route("/users/<id>")
 def show(id):
     user = User.query.get(id)
     cities = City.query.join(Visit).filter(Visit.user_id == id)
     return render_template("users/show.jinja", user=user, cities=cities)
 
-# @users_blueprint.route("/users/<id>/delete", methods=['POST'])
-# def delete_user(id):
-#     User.query.filter_by(id = id).delete()
-#     db.session.commit()
-#     return redirect('/users')
+# What is the above code doing? We are defining a route and we are giving it our models and storing them in a variable.
+# Why are we doing this? We
+
 
 @users_blueprint.route("/users")
 def users():

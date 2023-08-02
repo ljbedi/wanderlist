@@ -3,8 +3,10 @@
 
 
 
-<h1> {{ title }}</h1> 
-  
+<h1 class = "homepage-title"> {{ title[:6] }}<span class = "list">{{ title[6:] }}</span></h1> 
+<div class = "logo-home-container">
+<img class = "logo-home" src = "/static/images/logo.png"/>
+</div>
 {% endblock content %}
 
 

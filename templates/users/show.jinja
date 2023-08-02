@@ -4,17 +4,19 @@
 
 <h1>Name : {{user.name}}</h1>
 <h1>Year Joined : {{user.date_joined.strftime('%Y')}}</h1>
-<a href = "/visits/new?user={{user.id}}">Add City</a>
+<a class = "button" href = "/visits/new?user={{user.id}}">Add City</a>
 
 <h2>TO VISIT</h2>
 {% for visit in user.visits %}
   {% if not visit.visited %}
-    <p>{{visit.city.name}}</p>
+    <p>{{visit.city.name}}, {{visit.city.country}} </p>
     <form action="/users/{{user.id}}/visits/{{visit.id}}/delete" method="post">
-    <button type="submit">Delete</button>
+    <button class = "visit" type="submit">Delete</button>
     </form>
+
+    
     <form action="/users/{{user.id}}/visits/{{visit.id}}/visited" method="post">
-    <button type="submit">Visited</button>
+    <button class = "visit1" type="submit">Visited</button>
     </form>
   {% endif %}
 {% endfor %}
@@ -22,7 +24,7 @@
 <h2>VISITED</h2>
 {% for visit in user.visits %}
   {% if visit.visited %}
-    <p>{{visit.city.name}}</p>
+    <p>{{visit.city.name}}, {{visit.city.country}}</p>
   {% endif %}
 {% endfor %}
 

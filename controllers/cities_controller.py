@@ -25,7 +25,9 @@ def new_city():
 def create_city():
     city = request.form['city']
     country = request.form['country']
-    city = City(name=city, country=country)
+    description = request.form['description']
+    image_url = request.form['image_url']
+    city = City(name=city, country=country, description=description, image_url=image_url)
     db.session.add(city)
     db.session.commit()
     return redirect('/cities')
