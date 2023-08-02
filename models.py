@@ -42,6 +42,8 @@ class City(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(70))
     country = db.Column(db.String(70))
+    description = db.Column(db.Text)
+    image_url = db.Column(db.String(255))
     visits = db.relationship('Visit', backref ='city')
     
     def __repr__(self):

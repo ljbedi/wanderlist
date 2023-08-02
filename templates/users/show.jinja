@@ -11,7 +11,7 @@
   {% if not visit.visited %}
     <p>{{visit.city.name}}</p>
     <form action="/users/{{user.id}}/visits/{{visit.id}}/delete" method="post">
-    <button type="submit">Delete Visit</button>
+    <button type="submit">Delete</button>
     </form>
     <form action="/users/{{user.id}}/visits/{{visit.id}}/visited" method="post">
     <button type="submit">Visited</button>
@@ -29,3 +29,4 @@
 
 
 {% endblock %}
+

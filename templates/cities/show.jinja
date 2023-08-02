@@ -1,20 +1,13 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-<h1>Add City</h1>
-
-<form action="/cities" method="post">
-  <label for="city">Select a city:</label>
-    <select name="city_id" id="city">
-      {% for city in cities %}
-      <option value="{{ city.id }}">{{ city.name }} </option>
-      {% endfor %}
-    </select>
 
 
-  <input class="button" type='submit' value="Add">
-  
+<p class = "city-title" >{{city.name}}, {{city.country}}</p>
 
-</form>
+<p class = "city-description" > {{city.description}} </p>
+<img src = {{city.image_url}} </img>
+
+
 
 {% endblock %}

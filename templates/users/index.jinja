@@ -3,14 +3,14 @@
 {% block content %}
 <h1>Users</h1>
 
-<p class="button">
+<button class="new-users">
   <a class="button" href="/users/new">New User</a>
-</p>
+</button>
 
 <ul>
   {% for user in users %}
   <li>
-  <a href = "/users/{{ user.id }}"> {{user.name}}</a>
+  <a class = "user-title" href = "/users/{{ user.id }}"> {{user.name}}</a>
     <p>
       <form action="/users/{{ user.id }}/delete" method="POST">
         <input class="button" type="submit" value="Delete" />

@@ -3,14 +3,14 @@
 {% block content %}
 <h1>Cities</h1>
 
-<p class="button">
+<button class="new-cities">
   <a class="button" href="/cities/new">New City</a>
-</p>
+</button>
 
 <ul>
   {% for city in cities %}
   <li>
-  <p>{{ city.name }} , {{city.country}}</p>
+  <a class = "city-name" href = "/cities/{{ city.id }}">{{ city.name }} , {{city.country}}</a>
     <p>
       <form action="/cities/{{ city.id }}/delete" method="POST">
         <input class="button" type="submit" value="Delete" />
@@ -18,7 +18,26 @@
     </p>
   </li>
   {% endfor %}
-</ul>
+</ul> 
 
 
 {% endblock %}
+
+{# THE BELOW IS ME TRYING TO ADD A LINK FOR MORE INFO WHEN TURN THE CITY PAGE DESCRIPTION #}
+
+{# <ul>
+  {% for city in cities %}
+  <li>
+  <p class = "city-name">{{ city.name }} , {{ city.country}}</p>
+      <form action="/cities/{{ city.id }}/delete" method="POST">
+        <input class ="button" type ="submit" value="Delete" />
+      </form>
+      <form action="/cities/show/{{ city.id}}">
+        <input class = "button" type="submit" value="More Info" />
+      </form>
+  </p>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %} #}

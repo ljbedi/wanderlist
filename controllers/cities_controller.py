@@ -36,4 +36,9 @@ def delete_city(id):
     db.session.commit()
     return redirect('/cities')
 
+@cities_blueprint.route("/cities/<id>")
+def city_info(id):
+    city = City.query.get(id)
+    return render_template("cities/show.jinja", city=city)
+
 
